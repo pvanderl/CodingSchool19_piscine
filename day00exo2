@@ -1,0 +1,24 @@
+mkdir test0 test2
+touch -t 201806012047 test0
+touch -t 201806012146 test2
+chmod 715 test0
+chmod 504 test2
+
+touch -t 201806012146 test1
+echo "111" > test1
+chmod 714 test1
+
+touch -t 201806012245 test3
+echo > test3
+chmod 404 test3
+
+touch -t 201806012343 test4
+echo qq >test4
+chmod 641 test4
+
+touch -t 201806012344 test5
+echo q >test5
+chmod 404 test5
+
+ln -s test0 test6
+ln -f test3 test5
