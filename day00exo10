@@ -3,4 +3,7 @@ clean
 
 content:
 
-rm -v ~* #*#
+find . -type f \( -name "*~" -o -name "#*#" \) -print -delete
+
+-o = OR statement 
+\ are importants !!!
