@@ -1,0 +1,10 @@
+file:
+mettre uid a jour
+
+dn: uid=pvanderl,ou=candidate,ou=people,dc=s19,dc=be
+changetype: modify
+add: mobile
+mobile: 0032492930954
+
+commande:
+ldapmodify -f filename
