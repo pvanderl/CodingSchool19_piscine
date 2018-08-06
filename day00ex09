@@ -1,0 +1,11 @@
+Télécharger les ressources sur la page du projet
+Mettre dans votre dossier ex09
+
+cd dans ex09
+
+patch -o b a sw.diff
+
+"-o b" = output dans le fichier "b"
+
+a = fichier source
+sw.diff = fichier qui sert à patch
