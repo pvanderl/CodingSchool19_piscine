@@ -1,4 +1,4 @@
 file a rendre: midLS
 
 
-ls -Upmt
+ls -pmt
