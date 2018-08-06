@@ -1,0 +1,6 @@
+file name:
+clean
+
+content:
+
+rm -v ~* #*#
