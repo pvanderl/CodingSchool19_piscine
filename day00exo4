@@ -1,10 +1,1 @@
 ldapwhoami
-x=0
-want=3
-cat lines | while read line; do
-  x=$(( x+1 ))
-  if [ $x -eq "$want" ]; then
-    echo $line
-    break
-  fi
-done
