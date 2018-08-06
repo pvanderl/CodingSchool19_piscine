@@ -1,0 +1,3 @@
+touch z
+echo Z>z
+cat z
