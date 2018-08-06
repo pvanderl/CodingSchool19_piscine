@@ -1,3 +1,10 @@
 touch z
 echo -e "Z\n" >z
 cat z
+
+
+ou
+
+touch z
+echo Z>z
+cat z
