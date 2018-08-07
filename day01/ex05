@@ -1,0 +1,5 @@
+touch \"\\\?\$\*\'KwaMe\'\*\$\?\\\"
+echo 42>\"\\\?\$\*\'KwaMe\'\*\$\?\\\"
+
+On creer le fichier avec un backslash devant chaque symbole pour echapper le symbole
+puis on rajoute le texte dedans
