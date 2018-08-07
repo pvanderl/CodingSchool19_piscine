@@ -1,1 +1,1 @@
-ls -l | sed -e 'N;s/^.*\n//'
+ls -l | awk "(1+NR)%2"
