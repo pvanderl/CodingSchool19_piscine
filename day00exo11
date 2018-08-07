@@ -1,12 +1,11 @@
 filename : ft_magic
 
->+42 string 42
+42      string  42                      42 file
  
- puis
  
- file -C -m ft_magic
  
-
+ 
 premier morceau : octet a verifier
 deuxieme : type a verifier
 troisieme: contenu a verifier
+quatrieme: name
