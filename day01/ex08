@@ -1,1 +1,5 @@
+ldapsearch -Q "(sn=*bon*)" | grep "numEntries" | cut -c15-
+
+on recherche ce qui a "bon" dans le nom de famille.
+on ne demande que le nombre d'entree. Puis on cut pour n'afficher que le nombre
 
