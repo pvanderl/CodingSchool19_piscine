@@ -1,1 +1,5 @@
 
+id -gn $FT_USER
+
+
+j'ai pas pu check la sortie mais normalement elle est bonne
