@@ -1,0 +1,3 @@
+echo 1>testDay00
+touch -t 201806012242 testDay00
+tar testDay00.tar testDay00
