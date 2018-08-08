@@ -2,4 +2,4 @@ filenam: people.sh
 
 
 
-ldapsearch -LLL -Q "(uid=z*)" cn | grep "^cn:" | cut -c5- | sort -r
+ldapsearch -LLL -Q "(uid=z*)" cn | grep "^cn:" | cut -c5- | sort -r -f
