@@ -1,5 +1,5 @@
 
-id -gn $FT_USER | cut ' ' ','
+id -gn $FT_USER | tr ' ' ','
 
 
 j'ai pas pu check la sortie mais normalement elle est bonne
