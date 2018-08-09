@@ -1,3 +1,6 @@
+Faux en fait, j'avais mal compris l'exercice.
+
+
 void ft_print_comb2(void)
 {
     char combi [2];
