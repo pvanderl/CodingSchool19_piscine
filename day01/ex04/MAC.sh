@@ -1,5 +1,5 @@
 
-ifconfig -a link | grep "ether" | cut -c8- | sort | uniq -u
+ifconfig -a link | grep "ether" | cut -c8-
 
 -o
 
