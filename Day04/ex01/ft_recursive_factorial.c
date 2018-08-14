@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pvanderl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/11 02:04:49 by pvanderl          #+#    #+#             */
-/*   Updated: 2018/08/13 21:24:09 by pvanderl         ###   ########.fr       */
+/*   Created: 2018/08/14 18:05:27 by pvanderl          #+#    #+#             */
+/*   Updated: 2018/08/14 18:07:27 by pvanderl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_is_negative(int i)
+int	ft_recursive_factorial(int nb)
 {
-	if (i >= 0)
-		ft_putchar('P');
-	else
-		ft_putchar('N');
+	if (nb != 0)
+		return (nb * ft_recursive_factorial(nb - 1));
+	return (1);
 }

@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pvanderl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/11 02:04:49 by pvanderl          #+#    #+#             */
-/*   Updated: 2018/08/13 21:24:09 by pvanderl         ###   ########.fr       */
+/*   Created: 2018/08/12 11:52:10 by pvanderl          #+#    #+#             */
+/*   Updated: 2018/08/12 21:46:37 by pvanderl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include "rush02.c"
 
-void	ft_is_negative(int i)
+int	main(void)
 {
-	if (i >= 0)
-		ft_putchar('P');
-	else
-		ft_putchar('N');
+	write(1, "rush 5-3\n", 10);
+	rush(5, 3);
+	write(1, "\nrush 5-1\n", 12);
+	rush(5, 1);
+	write(1, "\nrush 1-1\n", 12);
+	rush(1, 1);
+	write(1, "\nrush 1-5\n", 12);
+	rush(1, 5);
+	write(1, "\nrush 4-4\n", 12);
+	rush(4, 4);
+	return (0);
 }

@@ -1,21 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pvanderl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/11 02:04:49 by pvanderl          #+#    #+#             */
-/*   Updated: 2018/08/13 21:24:09 by pvanderl         ###   ########.fr       */
+/*   Created: 2018/08/13 01:21:34 by pvanderl          #+#    #+#             */
+/*   Updated: 2018/08/13 21:42:40 by pvanderl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
 
-void	ft_is_negative(int i)
+void	print(int nb)
 {
-	if (i >= 0)
-		ft_putchar('P');
+	char c;
+
+	if (nb > 9)
+	{
+		c = '0' + (nb % 10);
+		print(nb / 10);
+	}
 	else
-		ft_putchar('N');
+		c = ('0' + nb);
+	ft_putchar(c);
+}
+
+void	ft_putnbr(int nb)
+{
+	int nbbis;
+
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = -nb;
+	}
+	nbbis = nb / 1;
+	print(nbbis);
 }

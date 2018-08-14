@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pvanderl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/11 02:04:49 by pvanderl          #+#    #+#             */
-/*   Updated: 2018/08/13 21:24:09 by pvanderl         ###   ########.fr       */
+/*   Created: 2018/08/13 01:50:42 by pvanderl          #+#    #+#             */
+/*   Updated: 2018/08/14 17:11:14 by pvanderl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
 
-void	ft_is_negative(int i)
+void	ft_putstr(char *str)
 {
-	if (i >= 0)
-		ft_putchar('P');
-	else
-		ft_putchar('N');
+	char x;
+
+	x = ' ';
+	while (x != '\0')
+	{
+		ft_putchar(*str);
+		x = *(++str);
+	}
 }

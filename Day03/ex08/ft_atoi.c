@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pvanderl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/10 23:58:50 by pvanderl          #+#    #+#             */
-/*   Updated: 2018/08/13 21:22:13 by pvanderl         ###   ########.fr       */
+/*   Created: 2018/08/14 11:12:20 by pvanderl          #+#    #+#             */
+/*   Updated: 2018/08/14 17:25:31 by pvanderl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_print_numbers(void)
+int		ft_atoi(char *str)
 {
-	char c;
+	int i;
+	int outint;
+	int negative;
 
-	c = '0';
-	while (c <= '9')
+	i = 0;
+	outint = 0;
+	negative = 0;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\f' ||
+			str[i] == '\r' || str[i] == '\v' || str[i] == '\n')
+		i++;
+	if (str[i] == '-')
 	{
-		ft_putchar(c);
-		c++;
+		negative = 1;
+		i++;
 	}
+	while (str[i] > 47 && str[i] < 58)
+	{
+		outint = outint * 10;
+		outint += str[i] - 48;
+		i++;
+	}
+	if (negative)
+		return (-outint);
+	return (outint);
 }

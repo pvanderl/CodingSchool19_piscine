@@ -1,21 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_sort_integer_table.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pvanderl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/11 02:04:49 by pvanderl          #+#    #+#             */
-/*   Updated: 2018/08/13 21:24:09 by pvanderl         ###   ########.fr       */
+/*   Created: 2018/08/14 16:56:11 by pvanderl          #+#    #+#             */
+/*   Updated: 2018/08/14 17:18:47 by pvanderl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_is_negative(int i)
+void	compare(int *tab, int position)
 {
-	if (i >= 0)
-		ft_putchar('P');
-	else
-		ft_putchar('N');
+	int x;
+
+	if (*(tab + position) < *(tab + position - 1))
+	{
+		x = *(tab + position);
+		*(tab + position) = *(tab + position - 1);
+		*(tab + position - 1) = x;
+		if (position > 1)
+			compare(tab, position - 1);
+	}
+}
+
+void	ft_sort_integer(int *tab, int size)
+{
+	int i;
+
+	i = 1;
+	while (i < size)
+	{
+		compare(tab, i);
+		i++;
+	}
 }
