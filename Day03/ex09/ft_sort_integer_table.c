@@ -6,7 +6,7 @@
 /*   By: pvanderl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/14 16:56:11 by pvanderl          #+#    #+#             */
-/*   Updated: 2018/08/14 17:18:47 by pvanderl         ###   ########.fr       */
+/*   Updated: 2018/08/15 16:18:33 by pvanderl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	compare(int *tab, int position)
 	}
 }
 
-void	ft_sort_integer(int *tab, int size)
+void	ft_sort_integer_table(int *tab, int size)
 {
 	int i;
 

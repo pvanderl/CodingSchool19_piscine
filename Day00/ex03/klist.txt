@@ -1,0 +1,5 @@
+Credentials cache: API:38382
+        Principal: pvanderl@S19.BE
+
+  Issued                Expires               Principal
+Aug  6 15:41:36 2018  Aug  7 01:41:36 2018  krbtgt/S19.BE@S19.BE

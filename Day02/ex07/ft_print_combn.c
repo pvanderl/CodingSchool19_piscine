@@ -6,7 +6,7 @@
 /*   By: pvanderl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/11 12:32:48 by pvanderl          #+#    #+#             */
-/*   Updated: 2018/08/13 22:06:50 by pvanderl         ###   ########.fr       */
+/*   Updated: 2018/08/20 23:18:25 by pvanderl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	print(char tb[], int n)
 	while (i < n)
 	{
 		chiffre = tb[i];
-		ft_putchar(chiffre);
+		ft_putchar(chiffre + '0');
 		i++;
 	}
 	if (!is_final_table(n, tb))

@@ -3,14 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvanderl <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pvanderl <pvanderl@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/13 01:21:34 by pvanderl          #+#    #+#             */
-/*   Updated: 2018/08/13 21:42:40 by pvanderl         ###   ########.fr       */
+/*   Created: 2018/08/20 18:57:26 by pvanderl          #+#    #+#             */
+/*   Updated: 2018/08/20 19:22:36 by pvanderl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
+
+void	ft_putstr(char *str)
+{
+	while (*str)
+	{
+		ft_putchar(*str);
+		str++;
+	}
+}
 
 void	print(int nb)
 {
@@ -30,11 +39,16 @@ void	ft_putnbr(int nb)
 {
 	int nbbis;
 
-	if (nb < 0)
+	if (nb == -2147483648)
+		ft_putstr("-2147483648");
+	else
 	{
-		ft_putchar('-');
-		nb = -nb;
+		if (nb < 0)
+		{
+			ft_putchar('-');
+			nb = -nb;
+		}
+		nbbis = nb / 1;
+		print(nbbis);
 	}
-	nbbis = nb / 1;
-	print(nbbis);
 }

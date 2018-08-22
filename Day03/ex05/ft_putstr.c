@@ -6,7 +6,7 @@
 /*   By: pvanderl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 01:50:42 by pvanderl          #+#    #+#             */
-/*   Updated: 2018/08/14 17:11:14 by pvanderl         ###   ########.fr       */
+/*   Updated: 2018/08/15 16:15:21 by pvanderl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@ void	ft_putchar(char c);
 
 void	ft_putstr(char *str)
 {
-	char x;
+	int i;
 
-	x = ' ';
-	while (x != '\0')
+	i = 0;
+	while (str[i] != '\0')
 	{
-		ft_putchar(*str);
-		x = *(++str);
+		ft_putchar(str[i]);
+		i++;
 	}
 }

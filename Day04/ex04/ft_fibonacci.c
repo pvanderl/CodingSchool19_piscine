@@ -6,12 +6,14 @@
 /*   By: pvanderl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 14:58:39 by pvanderl          #+#    #+#             */
-/*   Updated: 2018/08/14 18:18:39 by pvanderl         ###   ########.fr       */
+/*   Updated: 2018/08/15 12:29:36 by pvanderl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_fibonacci(int index)
 {
+	if (index > 46)
+		return (0);
 	if (index < 0)
 		return (-1);
 	if (index == 0)

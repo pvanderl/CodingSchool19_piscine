@@ -6,7 +6,7 @@
 /*   By: pvanderl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/13 01:17:47 by pvanderl          #+#    #+#             */
-/*   Updated: 2018/08/13 21:40:14 by pvanderl         ###   ########.fr       */
+/*   Updated: 2018/08/20 19:20:34 by pvanderl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,11 @@ void	ft_print_comb2(void)
 			print(a);
 			ft_putchar(' ');
 			print(b);
-			ft_putchar(',');
-			ft_putchar(' ');
+			if (!(a == 98 && b == 99))
+			{
+				ft_putchar(',');
+				ft_putchar(' ');
+			}
 		}
 	}
 }
