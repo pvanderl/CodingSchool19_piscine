@@ -6,7 +6,7 @@
 /*   By: pvanderl <pvanderl@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/19 23:28:21 by pvanderl          #+#    #+#             */
-/*   Updated: 2018/08/22 00:07:38 by pvanderl         ###   ########.fr       */
+/*   Updated: 2018/08/26 14:24:04 by pvanderl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	print(int *positions)
 	int		i;
 
 	i = 0;
-	while (i < 9)
+	while (i < 8)
 	{
 		ft_putchar('1' + positions[i]);
 		i++;

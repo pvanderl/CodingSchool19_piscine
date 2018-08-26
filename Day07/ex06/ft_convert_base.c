@@ -6,7 +6,7 @@
 /*   By: pvanderl <pvanderl@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/23 00:06:26 by pvanderl          #+#    #+#             */
-/*   Updated: 2018/08/23 00:06:28 by pvanderl         ###   ########.fr       */
+/*   Updated: 2018/08/23 21:19:31 by pvanderl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ void	print_nbr(int nbr, int basetype, char *base, char *result)
 		*result = '-';
 		result += 1;
 	}
-	if (lnbr > basetype)
+	if (lnbr >= basetype)
 	{
 		print_nbr(lnbr / basetype, basetype, base, result);
 	}

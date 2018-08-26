@@ -6,7 +6,7 @@
 /*   By: pvanderl <pvanderl@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/22 04:11:27 by pvanderl          #+#    #+#             */
-/*   Updated: 2018/08/22 15:35:40 by pvanderl         ###   ########.fr       */
+/*   Updated: 2018/08/26 01:03:18 by pvanderl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	ft_show_tab(struct s_stock_par *par)
 	while (par[i].str != '\0')
 	{
 		ft_putstr(par[i].str);
+		print(par[i].size_param);
 		ft_putchar('\n');
 		j = 0;
 		while (par[i].tab[j] != '\0')

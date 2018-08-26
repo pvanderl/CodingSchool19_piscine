@@ -6,9 +6,11 @@
 /*   By: pvanderl <pvanderl@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 02:11:13 by pvanderl          #+#    #+#             */
-/*   Updated: 2018/08/23 00:07:22 by pvanderl         ###   ########.fr       */
+/*   Updated: 2018/08/25 12:37:03 by pvanderl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
 
 int		get_size(char **argv)
 {
@@ -16,7 +18,7 @@ int		get_size(char **argv)
 	int nb;
 	int j;
 
-	i = 0;
+	i = 1;
 	nb = 0;
 	while (argv[i])
 	{
@@ -37,8 +39,10 @@ char	*ft_concat_params(int argc, char **argv)
 	int		i;
 	int		nb;
 
-	str = (char *)(malloc(sizeof(char) * (get_size(argv) + 1)));
-	i = 0;
+	if (argc == 1)
+		return ("");
+	str = (malloc(sizeof(char) * (get_size(argv))));
+	i = 1;
 	nb = 0;
 	while (i < argc)
 	{

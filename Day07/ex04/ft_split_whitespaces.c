@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pvanderl <pvanderl@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/23 00:21:29 by pvanderl          #+#    #+#             */
-/*   Updated: 2018/08/23 00:21:31 by pvanderl         ###   ########.fr       */
+/*   Created: 2018/08/23 21:45:20 by pvanderl          #+#    #+#             */
+/*   Updated: 2018/08/25 12:40:02 by pvanderl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int				is_in_charset(char c, char *charset)
+int		is_in_charset(char c, char *charset)
 {
 	while (*charset)
 		if (*(charset++) == c)
@@ -20,7 +20,7 @@ int				is_in_charset(char c, char *charset)
 	return (0);
 }
 
-int				get_size(char *str, char *charset)
+int		get_size(char *str, char *charset)
 {
 	int i;
 	int inword;
@@ -45,7 +45,7 @@ int				get_size(char *str, char *charset)
 	return (count);
 }
 
-int				size_before_next(char *str, char *charset)
+int		size_before_next(char *str, char *charset)
 {
 	int i;
 
@@ -55,7 +55,7 @@ int				size_before_next(char *str, char *charset)
 	return (i);
 }
 
-char			**ft_split(char *str, char *charset)
+char	**ft_split(char *str, char *charset)
 {
 	char	**tab;
 	int		parts;
@@ -63,18 +63,20 @@ char			**ft_split(char *str, char *charset)
 	int		len;
 	int		j;
 
-	parts = get_size(str, charset) + 1;
-	tab = (char **)(malloc(sizeof(char **) * parts));
+	parts = get_size(str, charset);
+	tab = malloc(sizeof(char *) * parts + 1);
 	i = 0;
 	while (i < parts)
 	{
 		while (is_in_charset(*str, charset))
 			str++;
 		len = size_before_next(str, charset);
-		tab[i] = (char *)malloc(sizeof(char *) * len);
+		tab[i] = malloc(sizeof(char) * len);
 		j = -1;
 		while (++j < len)
+		{
 			tab[i][j] = *(str++);
+		}
 		tab[i][j] = '\0';
 		i++;
 	}
@@ -82,12 +84,10 @@ char			**ft_split(char *str, char *charset)
 	return (tab);
 }
 
-char			**ft_split_whitespaces(char *str)
+char	**ft_split_whitespaces(char *str)
 {
-	char charset[3];
+	char *charset;
 
-	charset[0] = ' ';
-	charset[1] = '\t';
-	charset[2] = '\n';
+	charset = "\n\t ";
 	return (ft_split(str, charset));
 }

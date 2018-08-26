@@ -6,7 +6,7 @@
 /*   By: pvanderl <pvanderl@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/22 23:47:38 by pvanderl          #+#    #+#             */
-/*   Updated: 2018/08/23 00:01:35 by pvanderl         ###   ########.fr       */
+/*   Updated: 2018/08/23 21:43:18 by pvanderl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ char			**ft_split(char *str, char *charset)
 	int		len;
 	int		j;
 
-	parts = get_size(str, charset) + 1;
-	tab = (char **)(malloc(sizeof(char **) * parts));
+	parts = get_size(str, charset);
+	tab = (char **)(malloc(sizeof(char **) * parts + 1));
 	i = 0;
 	while (i < parts)
 	{

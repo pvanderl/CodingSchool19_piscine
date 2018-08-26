@@ -5,35 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pvanderl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/14 11:12:20 by pvanderl          #+#    #+#             */
-/*   Updated: 2018/08/16 11:56:11 by pvanderl         ###   ########.fr       */
+/*   Created: 2018/08/15 13:26:13 by pvanderl          #+#    #+#             */
+/*   Updated: 2018/08/15 13:27:51 by pvanderl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(char *str)
+int		ft_atoi(const char *str)
 {
 	int i;
-	int outint;
+	int nbr;
 	int negative;
 
+	nbr = 0;
+	negative = 0;
 	i = 0;
-	outint = 0;
-	negative = 1;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\f' ||
-			str[i] == '\r' || str[i] == '\v' || str[i] == '\n')
+	while ((str[i] == '\n') || (str[i] == '\t') || (str[i] == '\v') ||
+				(str[i] == ' ') || (str[i] == '\f') || (str[i] == '\r'))
 		i++;
-	if (str[i] == '+')
+	if (str[i] == '-')
+		negative = 1;
+	if (str[i] == '+' || str[i] == '-')
 		i++;
-	else if (str[i] == '-')
+	while (str[i] && (str[i] >= '0') && (str[i] <= '9'))
 	{
-		negative = -1;
+		nbr *= 10;
+		nbr += (int)str[i] - '0';
 		i++;
 	}
-	while (str[i] > '0' && str[i] < '9')
-	{
-		outint = outint * 10;
-		outint += str[i] - 48;
-		i++;
-	}
-	return (negative * outint);
+	if (negative == 1)
+		return (-nbr);
+	else
+		return (nbr);
 }

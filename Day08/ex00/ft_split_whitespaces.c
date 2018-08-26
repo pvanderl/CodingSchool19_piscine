@@ -5,81 +5,77 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pvanderl <pvanderl@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/22 02:39:08 by pvanderl          #+#    #+#             */
-/*   Updated: 2018/08/22 15:42:48 by pvanderl         ###   ########.fr       */
+/*   Created: 2018/08/23 23:55:02 by pvanderl          #+#    #+#             */
+/*   Updated: 2018/08/23 23:57:01 by pvanderl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int		is_in_charset(char c, char *charset)
+int		ft_count_elems(char *str)
 {
-	while (*charset)
-		if (*(charset++) == c)
-			return (1);
-	return (0);
-}
+	int	n;
+	int	i;
+	int	check;
 
-int		get_size(char *str, char *charset)
-{
-	int i;
-	int inword;
-	int count;
-
+	n = 0;
 	i = 0;
-	inword = 0;
-	count = 0;
-	while (str[i])
+	check = 0;
+	while (str[i] != '\0')
 	{
-		if (is_in_charset(str[i], &charset[0]))
+		if (str[i] != ' ' && str[i] != '\t' && str[i] != '\n' && !check)
+			check++;
+		else if (check)
 		{
-			inword = 0;
-		}
-		else if (!inword)
-		{
-			inword = 1;
-			count++;
+			n++;
+			check--;
 		}
 		i++;
 	}
-	return (count);
+	if (check)
+		n++;
+	return (n);
 }
 
-char	**ft_split(char *str, char *charset)
+void	ft_init_var(int var[3], size_t *l)
 {
-	char	**tab;
-	int		i;
-	int		inword;
-	int		count;
+	var[0] = 0;
+	var[1] = 0;
+	var[2] = 0;
+	*l = 0;
+}
 
-	tab = (char **)(malloc(sizeof(char *) * get_size(str, charset)));
-	i = 0;
-	inword = 0;
-	count = 0;
-	while (str[i])
-	{
-		if (is_in_charset(str[i], &charset[0]))
-		{
-			str[i] = '\0';
-			inword = 0;
-		}
-		else if (!inword)
-		{
-			inword = 1;
-			tab[count] = &str[i];
-			count++;
-		}
-		i++;
-	}
-	return (&tab[0]);
+char	**ft_add_null(char **result, int size)
+{
+	result[size] = NULL;
+	return (result);
 }
 
 char	**ft_split_whitespaces(char *str)
 {
-	char charset[3];
+	size_t	l;
+	char	**result;
+	int		var[3];
 
-	charset[0] = ' ';
-	charset[1] = '\n';
-	charset[2] = '\t';
-	return (ft_split(str, &charset[0]));
+	result = malloc(sizeof(char*) * (ft_count_elems(str) + 1));
+	ft_init_var(var, &l);
+	while (1)
+	{
+		if (str[var[1]] != ' ' && str[var[1]] != '\t' && str[var[1]] != '\n' &&
+			str[var[1]] != '\0')
+			l += sizeof(char);
+		else if (l > 0)
+		{
+			result[var[0]] = malloc(l + 1);
+			var[2] = 0;
+			var[1] = var[1] - l;
+			while (var[2] < (int)(l / sizeof(char)))
+				result[var[0]][var[2]++] = str[var[1]++];
+			result[var[0]++][var[2]] = '\0';
+			l = 0;
+		}
+		if (str[var[1]++] == '\0')
+			break ;
+	}
+	return (ft_add_null(result, var[0]));
 }

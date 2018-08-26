@@ -6,7 +6,7 @@
 /*   By: pvanderl <pvanderl@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/22 04:54:05 by pvanderl          #+#    #+#             */
-/*   Updated: 2018/08/22 05:26:57 by pvanderl         ###   ########.fr       */
+/*   Updated: 2018/08/24 07:28:29 by pvanderl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 typedef struct	s_list
 {
-	struct s_list 	*next;
-	void 			*data;
+	struct s_list	*next;
+	void			*data;
 }				t_list;
 
 #endif
